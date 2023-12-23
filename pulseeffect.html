@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        div{
+            border-radius:50%;
+            width:250px;
+            height:250px;
+            background-color: lightseagreen;
+            position: relative;
+        }
+        span{
+            z-index:-1;
+            border-radius: 50%;
+            position: absolute;
+            width:100%;
+            height:100%;
+            background-color: aqua;
+            transform:scale(1);
+            opacity:0.8;
+            animation-name:pulse;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-delay: calc(1s * var(--i));
+            /* border:4px solid darkcyan; */
+            /* filter: hue-rotate(10deg); */
+        }
+
+        @keyframes pulse {
+            100%{
+               transform:scale(2) ;
+               opacity:0;   
+               /* filter: hue-rotate(360deg); */
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <span style="--i:0"></span>
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+    </div>
+</body>
+</html>
